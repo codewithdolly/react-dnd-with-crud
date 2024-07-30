@@ -40,8 +40,6 @@ axios.post('http://localhost/fruitlist/update', reorderedItems)
 
 }
 
-
-
 const App = () => {
   const [items, setItems] = useState([]);
   const [addFruit, setAddFruit]= useState({id:"", content:""})
@@ -61,8 +59,6 @@ const App = () => {
     setItems(reorderedItems);
     updateFruitData(reorderedItems)
   };
-
-
 
 // Make a request for a user with a given ID
 axios.get('http://localhost/')
@@ -150,6 +146,7 @@ axios.get('http://localhost/fruitlist/all')
     <div>
       <input  required="required"   type="text" value={addFruit.id} onChange={e=>setAddFruit({...addFruit, id: e.target.value})} placeholder="Fruit ID" />
       <input  required="required"  value={addFruit.content} onChange={e=>setAddFruit({...addFruit, content: e.target.value})}  placeholder="Fruit name"/>
+      <button type="submit" className="btn btn-primary mt-2" onClick={addNewFruit}>add fruit</button>
       <button type="submit" className="btn btn-primary mt-2" onClick={addNewFruit}>add fruit</button>
      </div>
      
